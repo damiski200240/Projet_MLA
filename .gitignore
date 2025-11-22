@@ -1,9 +1,11 @@
 CelebA
+Data_preprocessed 
 Fader_2018.pdf
 __pycache__
 *.db
 data/*.db
 .vscode 
+ 
 
 # Created by https://www.gitignore.io/api/python
 
