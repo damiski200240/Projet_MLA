@@ -5,6 +5,9 @@ __pycache__
 *.db
 data/*.db
 .vscode 
+models
+src 
+
  
 
 # Created by https://www.gitignore.io/api/python
