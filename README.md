@@ -145,21 +145,34 @@ results/grid5/<modele>/<ids>/
 
 ### Test ONE
 ```powershell
-python .\test_celebA_one.py --model_pth models\eyeglasses.pth --img_id 182638 --alpha_min 1.2 --alpha_max 1.0 --n_interpolations 10
+python .\tests_pretrained\test_celebA_one.py --model_pth .\models_pre_entraines\eyeglasses.pth --img_id 182638 --alpha_min 2.0 --alpha_max 2.0 --n_interpolations 10
+
 ```
 
 ```powershell
-python .\test_celebA_one.py --model_pth models\male.pth --img_id 182638 --alpha_min 2.0 --alpha_max 2.0 --n_interpolations 10
+python .\tests_pretrained\test_celebA_one.py --model_pth .\models_pre_entraines\young.pth --img_id 182638 --alpha_min 10.0 --alpha_max 10.0 --n_interpolations 10
+
+```
+```powershell
+python .\tests_pretrained\test_celebA_one.py --model_pth .\models_pre_entraines\male.pth --img_id 182638 --alpha_min 10.0 --alpha_max 10.0 --n_interpolations 10
+
+
 ```
 
 ### Test GRID5
 ```powershell
-python .\test_celebA_grid5.py --model_pth models\eyeglasses.pth --img_ids 182638 190012 195555 200001 202599 --alpha_min 1.2 --alpha_max 1.0 --n_interpolations 12
+python .\tests_pretrained\test_celebA_grid5.py --model_pth .\models_pre_entraines\eyeglasses.pth --img_ids 182638 190012 195555 200001 202599 --alpha_min 2.0 --alpha_max 2.0 --n_interpolations 12
+
 ```
 
 ```powershell
-python .\test_celebA_grid5.py --model_pth models\male.pth --img_ids 182638 190012 195555 200001 202599 --alpha_min 2.0 --alpha_max 2.0 --n_interpolations 10
+python .\tests_pretrained\test_celebA_grid5.py --model_pth .\models_pre_entraines\male.pth --img_ids 182638 190012 195555 200001 202599 --alpha_min 2.0 --alpha_max 2.0 --n_interpolations 10
+
 ```
+```powershell
+python .\tests_pretrained\test_celebA_grid5.py --model_pth .\models_pre_entraines\young.pth --img_ids 182638 190012 195555 200001 202599 --alpha_min 10.0 --alpha_max 10.0 --n_interpolations 10
+```
+
 
 ---
 
@@ -178,3 +191,67 @@ python .\test_celebA_grid5.py --model_pth models\male.pth --img_ids 182638 19001
 ## 9. Objectif final
 
 Les résultats générés servent de baseline qualitative pour comparer avec notre propre implémentation des Fader Networks.
+
+
+
+Toutes les commandes doivent être exécutées depuis la **racine du projet `Projet_MLA`**.
+
+---
+
+## Script de test utilisé
+
+### `test_celebA_grid5_trained.py`
+### `test_celebA_one_trained.py`
+### `test_external_one_trained.py`
+
+Ces scripts permetent de tester le modèle Fader Network **entraîné par notre équipe** sur un ensemble
+fixe de 5 images CelebA issues du split test.
+
+ 
+
+## Paramètres d’interpolation
+
+Les paramètres principaux sont :
+- `alpha_min`
+- `alpha_max`
+- `n_interpolations`
+
+Les valeurs suivantes ont été retenues pour garantir un effet visuel clair :
+
+| Attribut   | alpha_min | alpha_max |
+|------------|-----------|-----------|
+| Male       | 2.0       | 2.0       |
+| Eyeglasses | 2.0       | 2.0       |
+| Young      | 10.0      | 10.0      |
+
+Ces valeurs sont identiques à celles utilisées pour les modèles pré-entraînés,
+afin de permettre une comparaison directe.
+
+---
+
+## Commandes d’exécution — Modèles entraînés (par exemple) 
+
+### Test sur 5 images CelebA (GRID5)
+
+#### Attribut **Male**
+
+```powershell
+python .\test_modeles_entraines\test_celebA_grid5_trained.py --model_pth modeles_entraines\male.pth --img_ids 202577 202583 202595 202505 202567 --alpha_min 2 --alpha_max 2 --n_interpolations 10
+
+```
+
+```powershell
+python .\test_modeles_entraines\test_celebA_grid5_trained.py --model_pth modeles_entraines\eyeglasses.pth --img_ids 202577 202583 202595 202505 202567 --alpha_min 2 --alpha_max 2 --n_interpolations 10
+
+
+```
+
+```powershell
+python .\test_modeles_entraines\test_celebA_grid5_trained.py --model_pth modeles_entraines\young.pth --img_ids 202577 202583 202595 202505 202567 --alpha_min 10 --alpha_max 10 --n_interpolations 10
+
+
+```
+
+
+
+
