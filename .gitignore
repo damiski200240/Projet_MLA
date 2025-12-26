@@ -5,10 +5,15 @@ __pycache__
 *.db
 data/*.db
 .vscode 
-models
+Models_pre_entraines
 src 
 results
 External_images
+plot_losses.py
+test_modeles_entraines
+tests_pretrained
+Modeles_entraines 
+
 
  
 
